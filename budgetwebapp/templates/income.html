@@ -1,0 +1,52 @@
+{%extends 'skeleton.html' %}
+
+{%block content%}
+<h1>Recent Income</h1>
+    
+<table>
+    <thead>
+        <tr>
+            <th>Amount</th>
+            <th>Description</th>
+            <th>Date</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for income in income %}
+            <tr>
+                <td>{{ expense.amount }}</td>
+                <td>{{ expense.description }}</td>
+                <td>{{ expense.date }}</td>
+                <td>
+                    <a href="{{ url_for('edit_income', id=income.id) }}">Edit</a>
+                    <a href="{{ url_for('delete_income', id=income.id) }}">Delete</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<div class ="form">
+    <form method="post" action="{{url_for('income')}}">
+        {{form.hidden_tag()}}
+    <fieldset>
+        <legend>Record New Income</legend>
+        <div class="form-group">
+            {{form.amount.label}}
+            {{form.amount}}
+        </div>
+        <div class="form-group">
+            {{form.date_in.label}}
+            {{form.date_in}}
+        </div>
+        <div class="form-group">
+            {{form.account_in.label}}
+            {{form.account_in}}
+        </div>
+        <div class="form-group">
+            {{form.submit}}
+        </div>
+    </fieldset>
+</form>
+</div>
+{%endblock content%}

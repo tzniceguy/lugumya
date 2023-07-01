@@ -1,0 +1,168 @@
+body{
+	padding: 15px;
+}
+nav{
+	background-color: #333;
+	padding: 10px;
+  margin:10px;
+}
+  
+nav a {
+	color: #fff;
+	text-decoration: none;
+	padding: 5px 10px;
+}
+  
+nav a:hover {
+	background-color: #555;
+  }
+
+  .footer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #f8f9fa;
+  }
+  .form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .form-group {
+    margin-bottom: 10px;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 5px;
+    font-size: 16px;
+  }
+  
+  input[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  legend {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  header, footer {
+    background-color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  h1, h2 {
+    color: #333;
+  }
+  
+  section {
+    padding: 40px;
+  }
+  
+  ul {
+    list-style-type: disc;
+  }
+  
+  li {
+    margin-bottom: 10px;
+  }
+  
+  /* Introduction section styling */
+  .introduction {
+    display: flex;
+    align-items: center;
+  }
+  
+  .introduction .image {
+    flex: 0 0 581px;
+    margin-right: 50px;
+  }
+  
+  .introduction .text {
+    flex: 1;
+  }
+  
+  /* Company overview styling */
+  .company-overview {
+    background-color: #f9f9f9;
+  }
+  
+  /* Testimonials section styling */
+  .testimonials {
+    background-color: #f2f2f2;
+    text-align: center;
+    padding-bottom: 60px;
+  }
+  
+  .slider {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  
+  .testimonial {
+    display: inline-block;
+    width: 300px;
+    padding: 20px;
+    margin: 0 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left;
+  }
+  
+  .testimonial img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+.testimonial blockqoute {
+  padding:auto;
+  content-visibility: auto;
+}
+  
+  /* Contact section styling */
+  .contact {
+    text-align: center;
+    background-color: #f9f9f9;
+    padding-bottom: 60px;
+  }
+  
+  .contact ul {
+    margin-top: 20px;
+    padding-left: 0;
+  }
+  
+  .contact li {
+    display: inline-block;
+    margin-right: 20px;
+  }
+  

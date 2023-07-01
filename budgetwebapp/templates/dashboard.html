@@ -1,0 +1,39 @@
+{%extends 'skeleton.html' %}
+
+{%block content%}
+    <div class = "cards">
+        <!--CArd to display Available Balances-->
+        <div class="card" style="width: 18rem; margin: 10px; opacity: 0.4;">
+        <div class="card-body">
+            <h5 class="card-title">Available Balances</h5>
+            <p class="card-text">Hauna Maokoto.</p>
+        </div>
+        <div class="card-icon" style="padding: 10px;">
+            <i class="fab fa-cc-visa fa-2x" style="margin-right: 10px;"></i>
+            <i class="fab fa-cc-mastercard fa-2x"></i>
+        </div>
+        </div>
+        
+        <!--CArd to display Incomes-->
+        <div class="card" style="width: 18rem; margin: 10px;">
+        <i class="fas fa-arrow-alt-circle-down fa-2x" style="float: left;"></i>
+        <div class="card-body" style="display: flex; align-items: center;">
+            <h5 class="card-title" style="margin-left: 10px;">Incomes</h5>
+            <p class="card-text" style="margin-left: 10px;">......</p>
+        </div>
+        </div>                         
+        <!--CArd to display Spending Amount-->
+        <div class="card" style="width: 18rem; margin:10px;">
+        <i class="fas fa-arrow-alt-circle-up fa-2x" style="float: left;"></i>
+        <div class="card-body" style="display: flex; align-items: center;">
+            <h5 class="card-title" style="margin-left: 10px;">Spendings</h5>
+            <p class="card-text" style="margin-left: 10px;">......</p>
+        </div>
+        </div>
+    </div>
+    </div>
+    <div class = "report-section" style="display: flex;">
+
+    </div>
+
+{%endblock content%}
