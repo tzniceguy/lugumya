@@ -4,7 +4,6 @@ Sure! Here's a brief description you can use for your GitHub project:
 
 Project Title: Lugumya Expense Tracker and Budgeting Web App
 
-Description:
 The Lugumya Expense Tracker and Budgeting Web App is a powerful and user-friendly application designed to help individuals track their expenses and manage their budgets effectively. This project aims to provide a comprehensive solution for personal finance management, enabling users to gain better control over their finances and make informed financial decisions.
 
 Key Features:
