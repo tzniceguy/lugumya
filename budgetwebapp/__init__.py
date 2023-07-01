@@ -13,7 +13,7 @@ def load_user(user_id):
 
 
 
-app.config ['SECRET_KEY'] = 'c63b3f5d3183238c704245494d3f63aa'
+app.config ['SECRET_KEY'] = 'enter your secret key here'
 app.config ['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///lugumya.db'
 
 
