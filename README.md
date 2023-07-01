@@ -18,4 +18,46 @@ Key Features:
 
 This project utilizes Flask, SQLAlchemy, and Bootstrap to create a responsive and intuitive user interface. With its convenient features and powerful functionality, the Lugumya Expense Tracker and Budgeting Web App empowers users to take control of their financial health.
 
+External Modules Used:
+1. Flask: A web framework for building the application.
+2. SQLAlchemy: An Object-Relational Mapping (ORM) library for working with databases.
+3. Flask-WTF: An extension for Flask that integrates with WTForms, providing form handling and validation.
+4. Flask-Login: An extension for handling user authentication and session management.
+5. Flask-Migrate: An extension for managing database migrations with Flask and SQLAlchemy.
+6. Flask-Bootstrap: An extension that integrates Bootstrap CSS framework with Flask for easy UI development.
+
+To download these modules using pip, you can use the following commands:
+
+1. Flask:
+```
+pip install Flask
+```
+
+2. SQLAlchemy:
+```
+pip install SQLAlchemy
+```
+
+3. Flask-WTF:
+```
+pip install Flask-WTF
+```
+
+4. Flask-Login:
+```
+pip install Flask-Login
+```
+
+5. Flask-Migrate:
+```
+pip install Flask-Migrate
+```
+
+6. Flask-Bootstrap:
+```
+pip install Flask-Bootstrap
+```
+
+Make sure you have pip installed and that you run these commands in your command-line interface or terminal within your project's virtual environment.
+
 Feel free to customize this description based on your specific project requirements and additional features you have implemented.
