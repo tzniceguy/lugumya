@@ -123,18 +123,23 @@ def income():
 def budget():
     recent_expenses = Expense.query.order_by(Expense.date.desc()).limit(10).all()
     form = BudgetForm()
+    
     if form.validate_on_submit():
-        amount =form.amount.data
+        amount = form.amount.data
         start_date = form.start_date.data
-        end_date= form.end_date.data
-        #adding Budget to a database
-        budget= Budget(amount=amount, start_date=start_date, end_date= end_date)
+        end_date = form.end_date.data
+        
+        # Create a new budget object
+        budget = Budget(amount=amount, start_date=start_date, end_date=end_date)
+        
         try:
             db.session.add(budget)
             db.session.commit()
-            flash('Budget Recorded Sucessfully!', 'success')
+            flash('Budget Recorded Successfully!', 'success')
         except:
-            return "Failed to Add budget"
-        else:
-            table= Budget.query.order_by(Budget.start_date())
-            return render_template('budget.html', expenses=recent_expenses, form=form, table=table)
+            flash('Failed to add budget', 'danger')
+        
+        return redirect(url_for('budget'))
+    
+    table = Budget.query.order_by(Budget.start_date.desc()).all()
+    return render_template('budget.html', expenses=recent_expenses, form=form, table=table)
