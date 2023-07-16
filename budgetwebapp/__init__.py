@@ -1,7 +1,7 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, UserMixin
-
+from flask_migrate import Migrate
 
 
 app = Flask(__name__)
@@ -18,6 +18,8 @@ app.config ['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///lugumya.db'
 
 
 db = SQLAlchemy(app)
+migrate = Migrate(app,db)
+
 
 from budgetwebapp import routes
 from budgetwebapp.models import User
