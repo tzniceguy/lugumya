@@ -15,9 +15,9 @@
     <tbody>
         {% for income in income %}
             <tr>
-                <td>{{ expense.amount }}</td>
-                <td>{{ expense.description }}</td>
-                <td>{{ expense.date }}</td>
+                <td>{{ income.amount }}</td>
+                <td>{{ income.date_in }}</td>
+                <td>{{ income.account }}</td>
                 <td>
                     <a href="{{ url_for('edit_income', id=income.id) }}">Edit</a>
                     <a href="{{ url_for('delete_income', id=income.id) }}">Delete</a>
