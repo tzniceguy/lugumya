@@ -118,11 +118,15 @@ class Account(db.Model):
     account_type = db.Column(db.Enum(AccountType), nullable=False)
     name = db.Column(db.String(30), nullable=False)
     account = db.Column(db.String(255), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)  # Add the foreign key constraint
 
-    def __init__(self, name, account_type, account):
+    def __init__(self, name, account_type, account, user_id):
         self.name = name
         self.account_type = account_type
         self.account = account
+        self.user_id = user_id
+
+
 
 #Model for Income table
 class Income(db.Model):
@@ -131,14 +135,34 @@ class Income(db.Model):
     amount = db.Column(db.Float, nullable=False)
     date_in = db.Column(db.Date, nullable=False)
     account_id = db.Column(db.Integer, db.ForeignKey('accounts.id'), nullable=False)
-    account = db.relationship('Account', backref=db.backref('income', lazy=True))
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)  # Add the foreign key constraint
 
-    def __init__(self, amount, date_in, account_id):
+    def __init__(self, amount, date_in, account_id, user_id):
         self.amount = amount
         self.date_in = date_in
         self.account_id = account_id
+        self.user_id = user_id
 
 
+
+class Transaction(db.Model):
+    __tablename__ = 'transaction'
+
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    transaction_type = db.Column(db.Enum('Income', 'Expense'), nullable=False)
+    category_id = db.Column(db.Integer, nullable=False)
+    amount = db.Column(db.Float, nullable=False)
+    description = db.Column(db.String(255))
+    date = db.Column(db.Date, nullable=False)
+
+    def __init__(self, user_id, transaction_type, category_id, amount, description, date):
+        self.user_id = user_id
+        self.transaction_type = transaction_type
+        self.category_id = category_id
+        self.amount = amount
+        self.description = description
+        self.date = date
 
 
 
