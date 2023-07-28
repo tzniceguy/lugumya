@@ -6,4 +6,4 @@ if __name__ == '__main__':
         # Create the tables
         db.create_all()
 
-    app.run()
+    app.run(debug=True)

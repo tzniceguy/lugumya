@@ -2,7 +2,7 @@ from flask import render_template, url_for, flash, redirect
 from budgetwebapp import app, db
 from flask_login import login_user, logout_user, login_required, current_user
 from budgetwebapp.forms import RegistrationForm, LoginForm, ResetPasswordForm, ExpenseForm, BudgetForm,AccountForm,IncomeForm 
-from budgetwebapp.models import User, Expense, Income, Budget
+from budgetwebapp.models import User, Expense, Income, Budget,Transaction
 from werkzeug.security import generate_password_hash as hasher, check_password_hash as verfy
 
 # Importing necessary modules and dependencies
@@ -54,7 +54,8 @@ def login():
 @login_required
 def dashboard():
     user = current_user.username
-    return render_template('dashboard.html', title='Account', user=user)
+    table = Transaction.query.order_by(Transaction.date)
+    return render_template('dashboard.html', title='Account', user=user, table=table)
 
 # Logout route for the user
 @login_required
@@ -143,3 +144,8 @@ def budget():
     
     table = Budget.query.order_by(Budget.start_date.desc()).all()
     return render_template('budget.html', expenses=recent_expenses, form=form, table=table)
+
+@app.route('/dashboard/profile', methods=['GET', 'POST'])
+@login_required
+def profile():
+    return render_template('profile.html')
